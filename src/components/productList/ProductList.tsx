@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {ProductModel} from "../../models/ProductModel";
-
+import './ProductStyle.css'
 
 const ProductList = () => {
 
     const [productsList, setProductsList] = useState<ProductModel[]>([]);
 
     useEffect(() => {
-        fetch('https://dummyjson.com/products?limit=1')
+        fetch('https://dummyjson.com/products?limit=10')
             .then(res => res.json())
             .then(response => {
                 setProductsList(response.products);
@@ -18,10 +18,10 @@ const ProductList = () => {
     }, []);
 
     return (
-        <div>
+        <>
             {
                 productsList.map(product => (
-                    <div key={product.id}>
+                    <div className={'product-card'}>
                         <h2>{product.title}</h2>
                         <img src={product.thumbnail} alt={product.title}/>
                         <p>{product.description}</p>
@@ -56,19 +56,21 @@ const ProductList = () => {
                         <div>
                             <h4>reviews:</h4>
                             {product.reviews.map(review => (
-                                <div><p>Date: {review.date}</p>
+                                <div>
+                                    <hr/>
+                                    <p>Date: {review.date}</p>
                                     <p>Rating: {review.rating}</p>
                                     <p>Name: {review.reviewerName}</p>
                                     <p>Contact: {review.reviewerEmail}</p>
                                     <p>Review: {review.comment}</p>
-                                    <hr/>
+
                                 </div>
                             ))}
                         </div>
                     </div>
                 ))
             }
-        </div>
+        </>
     );
 };
 
