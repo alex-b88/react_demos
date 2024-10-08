@@ -1,3 +1,6 @@
+# Lesson 1
+components and props
+
 # Project location
 https://github.com/alex-b88/react_demos.git
 
