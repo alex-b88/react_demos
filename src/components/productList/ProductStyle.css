@@ -17,3 +17,12 @@ h2{
 img{
     align-self: center;
 }
+
+.tags-container>h4{
+    font-weight: normal;
+    display: inline;
+}
+
+.tags-container>span{
+    font-style: italic;
+}

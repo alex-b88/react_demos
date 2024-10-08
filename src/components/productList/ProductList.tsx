@@ -32,8 +32,8 @@ const ProductList = () => {
                         <p>In stock: {product.stock}</p>
                         <p>Returns: {product.returnPolicy}</p>
                         <p>Min in order: {product.minimumOrderQuantity}</p>
-                        <div>
-                            <h4>tags:</h4>
+                        <div className={'tags-container'}>
+                            <h4 className={'tags'}>tags:</h4>
                             {
                                 product.tags.map(tag => (<span> {tag}</span>))
                             }
