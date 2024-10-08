@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
+import ProductList from "./components/productList/ProductList";
 
 function App() {
   return (
     <>
-
+      <ProductList/>
     </>
   );
 }
