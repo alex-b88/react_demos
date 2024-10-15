@@ -1,24 +1,17 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './App.css';
+import Users from "./components/Users/Users";
+
 
 
 function App() {
 
-  let[usersList, setUsersList] = useState<any>([]);
-
-  useEffect(() => {
-      fetch('https://dummyjson.com/users')
-        .then(response => response.json())
-        .then(data => {
-          setUsersList(data.users);
-          console.log(usersList);
-        });
-    }, []);
-
 
   return (
     <>
-
+        {
+           <Users/>
+        }
     </>
   );
 }
