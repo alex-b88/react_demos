@@ -1,30 +1,41 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {IUser} from "../../models/IUser";
 import User from "../User/User";
+import {IPost} from "../../models/IPost";
+import {getUsers} from "../../services/users.service";
+import {getPosts} from "../../services/posts.service";
 
-// type IUsersProps = {
-//     func:()=>void;
-// }
 
 const Users = () => {
 
+    let [posts, setPosts] = useState<IPost[] | null>(null);
     const getUserId = (id:number) =>{
-        console.log(id);
+        getPosts(id)
+            .then((response) => {
+                setPosts(response);
+                // console.log(response);
+            })
     }
+
 
     let [usersList, setUsersList] = useState<IUser[]>([]);
     useEffect(() => {
-        fetch('https://dummyjson.com/users')
-            .then(response => response.json())
-            .then(data => {
-                setUsersList(data.users);
+        getUsers()
+            .then((response ) => {
+                setUsersList(response)
+                console.log(response);
             });
     }, []);
 
     return (
         <>
+            <hr/>
             {
-                usersList.map((value: IUser) => <User key={value.id} user={value} getUserId={()=>{getUserId(value.id)}}/>)
+                posts?.map(post => <div key={post.id}>{post.title}</div>)
+            }
+            <hr/>
+            {
+                 usersList.map((value:IUser) => <User key={value.id} user={value} getUserId={()=>{getUserId(value.id)}}/>)
             }
         </>
     );
