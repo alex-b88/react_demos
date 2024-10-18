@@ -1,0 +1,17 @@
+
+.user-container{
+    padding: 15px 20px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-address
+{
+    margin-left: 15px;
+}
