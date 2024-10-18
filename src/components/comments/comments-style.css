@@ -1,0 +1,30 @@
+
+.comments-container{
+    margin: 20px auto;
+    width: 98%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.comment{
+    width: 90%;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comment-body{
+    margin-top: 5px;
+    box-shadow: 1px -1px 5px 2px rgba(212,212,212,0.28) inset;
+    -webkit-box-shadow: 1px -1px 5px 2px rgba(212,212,212,0.28) inset;
+    -moz-box-shadow: 1px -1px 5px 2px rgba(212,212,212,0.28) inset;
+    padding: 20px;
+    border-radius: 5px;
+}

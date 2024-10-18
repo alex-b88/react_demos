@@ -1,10 +1,10 @@
-import {IComment} from "../models/IComments";
-import axios from "axios";
+import {IComment} from "../models/IComment";
+import {axiosInstance} from "./axiosInstance"
 
 
 export const getComments = async (id:number):Promise<IComment[]> => {
     try{
-        const response = await axios.get<IComment[]>("posts/"+id+"comments");
+        const response = await axiosInstance.get<IComment[]>("/comments?postId="+id.toString());
         return response.data;
     }
     catch (error) {

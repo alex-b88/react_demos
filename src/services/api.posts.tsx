@@ -1,9 +1,9 @@
 import {IPost} from "../models/IPost";
-import axios from "axios";
+import {axiosInstance} from "./axiosInstance"
 
 export const getPosts = async (id:number):Promise<IPost[]> => {
     try{
-        const response = await axios.get<IPost[]>("users/"+id+"posts");
+        const response = await axiosInstance.get<IPost[]>("posts?userId="+id.toString());
         return response.data;
     }
     catch (error) {

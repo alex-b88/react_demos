@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {IUser} from "../../models/IUser";
 import {getUsers} from "../../services/api.users";
 import "./user-styles.css"
+import {Link} from "react-router-dom";
 
 const Users = () => {
 
@@ -18,7 +19,7 @@ const Users = () => {
         <>
             {
                 users?.map((user) => (
-                    <div key={user.id} className={"user-container"}>
+                    <div key={user.id} className={"user-info"}>
                         <span><b>Name: </b><i>{user.name}</i></span>
                         <span><b>Username: </b><i>{user.username}</i></span>
                         <span><b>E-mail: </b><i>{user.email}</i></span>
@@ -31,6 +32,7 @@ const Users = () => {
                         <span className={"user-address"}><i>{user.company.name}</i></span>
                         <span className={"user-address"}><i>{user.company.bs}</i></span>
                         <span className={"user-address"}><i>{user.company.catchPhrase}</i></span>
+                        <Link className={"show-posts"} to={`/posts`} state={user as IUser}>Show posts</Link>
                     </div>
                 ))
             }
