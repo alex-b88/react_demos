@@ -11,7 +11,6 @@ const Users = () => {
     useEffect(() => {
         getUsers().then((response) => {
             setUsers(response);
-            console.log(users);
         })
     }, []);
 
