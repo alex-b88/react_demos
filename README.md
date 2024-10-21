@@ -19,3 +19,6 @@ git rm .idea/ -r --cached
 git add -u .idea/
 git commit -m "Removed the .idea folder"
 
+# Task
+Взяти з dummyjson будь-який ендпоінт, який повертає багато об'єктів (products,carts,users etc...), та реалізувати пагінацію цих об'єктів. Крок пагінації ви визначаєте самостійно
+

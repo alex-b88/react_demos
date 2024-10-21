@@ -1,5 +1,5 @@
 
-.locations-container {
+.episodes-container{
     margin: 0 auto;
     width: 1230px;
     display: flex;
@@ -9,7 +9,7 @@
     flex-wrap: wrap;
 }
 
-.one-location-box{
+.one-episode-box{
     width: 600px;
     min-height: 120px;
     background: rgb(60, 62, 68);
@@ -22,27 +22,8 @@
     align-items: flex-start;
 }
 
-.one-location-box>h4{
+.one-episode-box>h4{
     font-size: 25px;
     align-self: center;
     margin-bottom: 15px;
-}
-
-.one-location-box>span{
-    font-size: 17px;
-    margin-bottom: 10px;
-}
-
-.persons-img-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3px;
-    flex-wrap: wrap;
-}
-
-.persons-img-container>img{
-    width: 50px;
-    height: 50px;
 }
