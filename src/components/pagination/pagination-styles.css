@@ -1,0 +1,28 @@
+
+.buttons-section{
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: rgb(32, 35, 41);
+}
+
+.buttons-section>button{
+    padding: 5px 20px;
+    background: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+
+}
+
+.buttons-section>button:hover{
+    transform: scale(1.03) !important;
+}
+
+
+.buttons-section>span{
+    color: white;
+}

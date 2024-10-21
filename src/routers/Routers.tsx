@@ -1,8 +1,8 @@
 import {createBrowserRouter} from "react-router-dom";
 import MainLayOut from "../layouts/MainLayOut";
 import CharactersPage from "../pages/CharactersPage";
-import ProductsPage from "../pages/ProductsPage";
-import UsersPage from "../pages/UsersPage";
+import LocationsPage from "../pages/LocationsPage";
+import EpisodesPage from "../pages/EpisodesPage";
 import HomePage from "../pages/HomePage";
 
 export const routers = createBrowserRouter([
@@ -15,10 +15,10 @@ export const routers = createBrowserRouter([
                 path: 'categories', element: <CharactersPage/>
             },
             {
-                path: 'products', element: <ProductsPage/>
+                path: 'locations', element: <LocationsPage/>
             },
             {
-                path: 'users', element: <UsersPage/>
+                path: 'episodes', element: <EpisodesPage/>
             }
         ]
 

@@ -1,0 +1,49 @@
+
+.characters-container{
+    margin: 0 auto;
+    width: 1230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.one-character-box{
+    width: 600px;
+    height: 220px;
+    background: rgb(60, 62, 68);
+    border-radius: 15px;
+    position: relative;
+}
+
+.object-image{
+    width: 230px;
+    height: 220px;
+    border-radius: 15px 0 0 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.character-info{
+    margin-top: 15px;
+    padding-left: 245px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.character-info>h4{
+    font-size: 25px;
+}
+
+.character-info>span{
+    font-size: 17px;
+}
+.text-grey{
+    margin: 20px 0 7px 0;
+    color: rgb(158, 158, 158);
+    font-size: 16px;
+}
+
