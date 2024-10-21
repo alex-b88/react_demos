@@ -1,9 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useSearchParams} from "react-router-dom";
-import {ILocation} from "../models/ILocation";
 import {apiService} from "../services/api.service";
 import PaginationComponent from "../components/pagination/PaginationComponent";
-import Locations from "../components/locations/locations";
 import {IEpisode} from "../models/IEpisode";
 import Episodes from "../components/episodes/episodes";
 

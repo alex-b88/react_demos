@@ -2,7 +2,6 @@
 import React, {FC} from 'react';
 import {ILocation} from "../../models/ILocation";
 import "./locations-styles.css"
-import Characters from "../characters/characters";
 import Character from "../character/character";
 
 type Props = {
