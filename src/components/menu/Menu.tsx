@@ -7,7 +7,7 @@ const Menu = () => {
         <div className={"menu-block"}>
             <ul>
                 <li><Link to={'/'} className={"m-link"}>Main</Link></li>
-                <li><Link to={'categories'} className={"m-link"}>Characters</Link></li>
+                <li><Link to={'characters'} className={"m-link"}>Characters</Link></li>
                 <li><Link to={'locations'} className={"m-link"}>Locations</Link></li>
                 <li><Link to={'episodes'} className={"m-link"}>Episodes</Link></li>
             </ul>
