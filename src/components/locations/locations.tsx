@@ -18,12 +18,12 @@ const Locations: FC<Props> = ({locationList}) => {
                         <h4>{object.name}</h4>
                         <span><b>Type:</b> {object.type}</span>
                         <span><b>Dimension:</b> {object.dimension}</span>
-                        {/*<span><b>Residents:</b></span>*/}
-                        {/*<div className={"persons-img-container"}>*/}
-                        {/*    {object.residents.map(personLink => (*/}
-                        {/*        <Character personLink={personLink}/>*/}
-                        {/*    ))}*/}
-                        {/*</div>*/}
+                        <span><b>Residents:</b></span>
+                        <div className={"persons-img-container"}>
+                            {object.residents.map(personLink => (
+                                <Character personLink={personLink}/>
+                            ))}
+                        </div>
                     </div>
                 ))
             }
