@@ -14,7 +14,6 @@ const Character: FC<Props> = ({personLink}) => {
     useEffect(() => {
         apiService.characters.getOne(personLink).then(response => {
             setPerson(response);
-            console.log(person);
         })
     }, []);
 
