@@ -5,12 +5,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     gap: 30px;
-    flex-wrap: wrap;
 }
 
 .one-location-box{
-    width: 600px;
+    width: 1200px;
     min-height: 120px;
     background: rgb(60, 62, 68);
     border-radius: 15px;
@@ -36,7 +36,7 @@
 .persons-img-container{
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 3px;
     flex-wrap: wrap;
