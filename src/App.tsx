@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Form from "./components/formComponent/Form";
+import FormComponent from "./components/formComponent/FormComponent";
 
 function App() {
   return (
     <>
-      <Form/>
+      <FormComponent/>
     </>
   );
 }

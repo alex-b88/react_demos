@@ -5,27 +5,28 @@ import {joiResolver} from "@hookform/resolvers/joi";
 import {formValidator} from "../../validators/formValidator";
 import {putPost} from "../../services/putPost";
 
-const Form = () => {
+const FormComponent = () => {
 
     const {handleSubmit, register, formState: {errors, isValid}} = useForm<IFormModel>({mode: 'all', resolver: joiResolver(formValidator)})
 
     const customHandler = (dataFromForm:IFormModel) => {
-        putPost(dataFromForm);
+        const serverResponse = putPost(dataFromForm);
+        console.log(serverResponse);
     }
 
     return (
-        <div>
+        <div className={"form-container"}>
             <form onSubmit={handleSubmit(customHandler)}>
-                <div><input type="text" {...register('title')}/>
+                <><input placeholder={"user name"} type="text" {...register('title')}/>
                     {errors.title && <div>{errors.title.message}</div>}
-                </div>
-                <div><textarea {...register('body')}/>
+                </>
+                <><textarea placeholder={"post body"} {...register('body')}/>
                     {errors.body && <div>{errors.body.message}</div>}
-                </div>
-                <button disabled={!isValid}>save</button>
+                </>
+                <button disabled={!isValid}>send</button>
             </form>
         </div>
     );
 };
 
-export default Form;
+export default FormComponent;

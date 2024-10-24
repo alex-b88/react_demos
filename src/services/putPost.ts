@@ -2,9 +2,10 @@ import {IFormModel} from "../models/IFormModel";
 import {axiosInstanse} from "./axiosInstanse";
 
 
-export const putPost = (dataFromForm:IFormModel) => {
+export const putPost = async (dataFromForm:IFormModel): Promise<number> => {
     const {title, body} = dataFromForm;
-    axiosInstanse.post('posts', {
+
+    return await axiosInstanse.post('posts', {
         body: JSON.stringify({
             title: title,
             body: body,
@@ -14,5 +15,5 @@ export const putPost = (dataFromForm:IFormModel) => {
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
         },})
-        .then((response) => console.log(response.status))
+        .then(response => {return response.status})
 }

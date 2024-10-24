@@ -1,0 +1,75 @@
+
+.main-layout{
+    width: 60%;
+    margin: 100px auto;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-areas: "content navigation";
+    grid-gap: 20px;
+}
+
+.navigation{
+    padding-top: 40px;
+    grid-area: navigation;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-height: 200px;
+}
+
+.main-page, .users-page{
+    padding: 40px 10px 20px 10px;
+    grid-area: content;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+ul{
+    li{
+        margin-bottom: 10px;
+    }
+}
+
+a{
+    text-decoration: none;
+    color: #282c34;
+    font-size: 20px;
+    font-weight: 700;
+    &:visited{
+        color: #282c34;
+    }
+    &:hover{
+            color: #ff6600;
+        text-decoration: underline;
+        }
+}
+
+.form-container, form{
+    width: 100%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+form input[type="text"]{
+    width: 50%;
+    height: 20px;
+}
+
+form textarea{
+    width: 50%;
+    height: 100px;
+    resize: none;
+}
+
+form>button{
+    padding: 5px 30px;
+    font-size: 16px;
+}
