@@ -9,8 +9,8 @@ const FormComponent = () => {
 
     const {handleSubmit, register, formState: {errors, isValid}} = useForm<IFormModel>({mode: 'all', resolver: joiResolver(formValidator)})
 
-    const customHandler = (dataFromForm:IFormModel) => {
-        const serverResponse = putPost(dataFromForm);
+    const customHandler = async (dataFromForm:IFormModel) => {
+        const serverResponse = await putPost(dataFromForm);
         console.log(serverResponse);
     }
 
