@@ -29,17 +29,20 @@ const LoginForm = () => {
             {
                 user ? <UserComponent user={user}/>
                     : <form onSubmit={handleSubmit(customHandler)}>
-                    <>
-                        <input placeholder={"Username"} type="text" {...register('login')}/>
-                        {errors.login && <div>{errors.login.message}</div>}
-                    </>
-                    <>
-                        <input placeholder={"password"} type="password" {...register('password')}></input>
-                        {errors.password && <div>{errors.password.message}</div>}
-                    </>
-                    <button disabled={!isValid}>login</button>
-                </form>
+                        <>
+                            <input placeholder={"Username"} type="text" {...register('login')}/>
+                            {errors.login && <div>{errors.login.message}</div>}
+                        </>
+                        <>
+                            <input placeholder={"password"} type="password" {...register('password')}></input>
+                            {errors.password && <div>{errors.password.message}</div>}
+                        </>
+                        <button disabled={!isValid}>login</button>
+                        <br/>
+                        <div>log: emmaj pass: emmajpass</div>
+                    </form>
             }
+
         </div>
     );
 };
