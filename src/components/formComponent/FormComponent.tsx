@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {useForm} from "react-hook-form";
 import {IFormModel} from "../../models/IFormModel";
 import {joiResolver} from "@hookform/resolvers/joi";
@@ -10,8 +10,8 @@ const FormComponent = () => {
     const {handleSubmit, register, formState: {errors, isValid}} = useForm<IFormModel>({mode: 'all', resolver: joiResolver(formValidator)})
 
     const customHandler = async (dataFromForm:IFormModel) => {
-        const serverResponse = await putPost(dataFromForm);
-        console.log(serverResponse);
+        const res = await putPost(dataFromForm);
+        console.log(res);
     }
 
     return (
@@ -26,7 +26,7 @@ const FormComponent = () => {
                 <button disabled={!isValid}>send</button>
             </form>
         </div>
-    );
+    )
 };
 
 export default FormComponent;
