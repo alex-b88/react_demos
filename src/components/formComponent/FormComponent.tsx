@@ -8,23 +8,27 @@ import {putPost} from "../../services/putPost";
 const FormComponent = () => {
 
     const {handleSubmit, register, formState: {errors, isValid}} = useForm<IFormModel>({mode: 'all', resolver: joiResolver(formValidator)})
+    const [serverLog, setServerLog] = useState<number>()
 
     const customHandler = async (dataFromForm:IFormModel) => {
         const res = await putPost(dataFromForm);
-        console.log(res);
+        setServerLog(res)
     }
 
     return (
         <div className={"form-container"}>
-            <form onSubmit={handleSubmit(customHandler)}>
-                <><input placeholder={"user name"} type="text" {...register('title')}/>
-                    {errors.title && <div>{errors.title.message}</div>}
-                </>
-                <><textarea placeholder={"post body"} {...register('body')}/>
-                    {errors.body && <div>{errors.body.message}</div>}
-                </>
-                <button disabled={!isValid}>send</button>
-            </form>
+            {
+                serverLog === 201 ? <div>post submitted</div>
+                    : <form onSubmit={handleSubmit(customHandler)}>
+                        <><input placeholder={"user name"} type="text" {...register('title')}/>
+                            {errors.title && <div>{errors.title.message}</div>}
+                        </>
+                        <><textarea placeholder={"post body"} {...register('body')}/>
+                            {errors.body && <div>{errors.body.message}</div>}
+                        </>
+                        <button disabled={!isValid}>send</button>
+                    </form>
+            }
         </div>
     )
 };
